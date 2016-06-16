@@ -17,14 +17,16 @@ gem "paperclip", "~> 5.0.0.beta1"
 gem 'dropzonejs-rails'
 gem "figaro", "~> 1.1.0"
 
-group :production do
+
+group :production do 
 	gem 'pg'
 	gem 'rails_12factor'
 end
 
-group :development, :test do
+group :development, :test do 
 	gem 'sqlite3'
 end
+
 
 
 group :development, :test do
