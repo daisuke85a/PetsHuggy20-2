@@ -80,8 +80,11 @@ Rails.application.configure do
   #remember to change localhost to actual host
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # s3 heroku config
   config.paperclip_defaults = {
   storage: :s3,
+  s3_protocol: :https,
+  s3_host_name: :ENV.fetch['S3_HOST_NAME'],
   s3_credentials: {
     bucket: ENV.fetch('S3_BUCKET_NAME'),
     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
