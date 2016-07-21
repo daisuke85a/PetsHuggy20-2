@@ -82,7 +82,7 @@
                         </div>
                         
                         <div class="panel-body panel-real">         
-                            <%= form_for [@listing, @listing.reservations.new] do |f| %>       
+                            <%= form_for [@listing, @listing.reservations.new], url: new_listing_reservation_path(@listing), html: {method: "get"} do |f| %>       
                                            
                                 <!-- これは、予約をするときに、一緒におくる、データです。-->
                                 <%= f.hidden_field :listing_id, value: @listing.id %>
@@ -139,7 +139,7 @@
                                 </div>        
 
                                 <div class="actions text-center">
-                                    <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide" %>
+                                    <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide",disabled:true %>
                                 </div>
                             <% end %>
                         </div>
