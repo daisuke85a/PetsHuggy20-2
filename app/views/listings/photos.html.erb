@@ -13,7 +13,7 @@
             </div>
 
             <div class="panel-body">          
-                <%= form_for @photo, html:{multipart: true,class:"dropzone", id:"my-dropzone" } do |f| %> 
+                <%= form_for @photo, html:{multipart: true,class:"dropzone", id:"my-dropzone", required: "true" } do |f| %> 
                     
                     <%= f.hidden_field :listing_id, value: @listing.id %>
                     <div class="dz-message needsclick">
