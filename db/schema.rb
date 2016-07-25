@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160725070620) do
+=======
+ActiveRecord::Schema.define(version: 20160722003058) do
+>>>>>>> f2a7e818b51c3cabd6d8a0f869a47c90f4a216f8
 
   create_table "listings", force: :cascade do |t|
     t.string   "home_type"
