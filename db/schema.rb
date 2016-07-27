@@ -11,11 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160725070620) do
-=======
-ActiveRecord::Schema.define(version: 20160722003058) do
->>>>>>> f2a7e818b51c3cabd6d8a0f869a47c90f4a216f8
+ActiveRecord::Schema.define(version: 20160725092520) do
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "listings", force: :cascade do |t|
     t.string   "home_type"
@@ -36,6 +39,17 @@ ActiveRecord::Schema.define(version: 20160722003058) do
   end
 
   add_index "listings", ["user_id"], name: "index_listings_on_user_id"
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "conversation_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "photos", force: :cascade do |t|
     t.integer  "listing_id"

@@ -21,6 +21,8 @@ gem 'geocoder'
 gem 'jquery-ui-rails'
 gem 'stripe'
 
+gem "private_pub"
+gem "thin"
 
 
 
