@@ -24,6 +24,8 @@ gem 'stripe'
 gem "private_pub"
 gem "thin"
 
+gem 'ransack'
+
 
 
 group :production do 

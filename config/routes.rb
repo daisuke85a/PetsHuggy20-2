@@ -45,6 +45,10 @@ Rails.application.routes.draw do
   get '/connect/deauthorize' => 'stripe#deauthorize', as: 'stripe_deauthorize'
 
   get '/not_checked' => 'listings#not_checked'
+
+  get '/search' => 'pages#search'
+
+  get '/ajaxsearch' => 'pages#ajaxsearch'
   
 end
 
